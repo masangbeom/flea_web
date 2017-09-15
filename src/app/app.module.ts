@@ -18,13 +18,30 @@ import { AppRoutingModule } from './app.routing';
 // Layouts
 import { FullLayoutComponent } from './layouts/full-layout.component';
 
+// Firebase Setting
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+export const firebaseConfig = {
+  apiKey: "AIzaSyA6fqH1BS5bJuhxsSTpkqV6mQik8PA21hQ",
+  authDomain: "flea-firebase.firebaseapp.com",
+  databaseURL: "https://flea-firebase.firebaseio.com",
+  projectId: "flea-firebase",
+  storageBucket: "flea-firebase.appspot.com",
+  messagingSenderId: "143400216064"
+};
+
+
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    
   ],
   declarations: [
     AppComponent,
