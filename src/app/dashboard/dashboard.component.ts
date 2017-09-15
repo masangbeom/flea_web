@@ -8,9 +8,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class DashboardComponent {
 
   constructor(public db: AngularFireDatabase) { 
-    this.db.object('/test/').update({
-      test : "test"
-    })
+   
   }
 
 }

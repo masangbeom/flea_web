@@ -1,3 +1,4 @@
+import { AngularFireDatabase } from 'angularfire2/database';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FullLayoutComponent implements OnInit {
 
+  private isAccept: boolean = false;
   public disabled = false;
   public status: {isopen: boolean} = {isopen: false};
 
@@ -20,4 +22,18 @@ export class FullLayoutComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  constructor(public db: AngularFireDatabase){
+    
+  }
+
+  login(password){
+    this.db.object('/').subscribe((root)=>{
+      if(root.password == password){
+        this.isAccept = true;
+      }else{
+        this.isAccept = false;
+      }
+    })
+  }
 }
