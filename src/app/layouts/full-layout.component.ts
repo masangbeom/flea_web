@@ -1,12 +1,15 @@
 import { AngularFireDatabase } from 'angularfire2/database';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './full-layout.component.html'
 })
-export class FullLayoutComponent implements OnInit {
 
+@Injectable()
+export class FullLayoutComponent implements OnInit {
+  public accountKey: any;
+  public account: any;
   private isAccept: boolean = false;
   public disabled = false;
   public status: {isopen: boolean} = {isopen: false};
@@ -27,13 +30,15 @@ export class FullLayoutComponent implements OnInit {
     
   }
 
-  login(password){
-    this.db.object('/').subscribe((root)=>{
-      if(root.password == password){
-        this.isAccept = true;
-      }else{
-        this.isAccept = false;
-      }
+  login(id, password){
+    this.db.list('/accounts/').subscribe((accounts)=>{
+      accounts.forEach(account => {
+        if(account.id == id && account.password == password){
+          this.isAccept = true;
+          this.account = account;
+          return false;
+        }
+      });
     })
   }
 }
