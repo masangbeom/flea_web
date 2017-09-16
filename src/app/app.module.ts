@@ -1,3 +1,4 @@
+import { D3Service } from 'd3-ng2-service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
@@ -23,6 +24,8 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/dat
 import { Observable } from 'rxjs/Observable';
 import { ImageUploadModule } from 'angular2-image-upload'
 
+//import { BrushZoom2Component } from './brushzoom/brush-zoom-2.component'
+
 export const firebaseConfig = {
   apiKey: "AIzaSyA6fqH1BS5bJuhxsSTpkqV6mQik8PA21hQ",
   authDomain: "flea-firebase.firebaseapp.com",
@@ -44,9 +47,11 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     NoopAnimationsModule,
+    
   ],
   declarations: [
     AppComponent,
+    // BrushZoom2Component,
     FullLayoutComponent,
     NAV_DROPDOWN_DIRECTIVES,
     BreadcrumbsComponent,
@@ -55,8 +60,9 @@ export const firebaseConfig = {
   ],
   providers: [{
     provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
+    useClass: HashLocationStrategy,
+    
+  },D3Service],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

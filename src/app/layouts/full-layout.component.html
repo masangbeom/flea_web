@@ -1,16 +1,16 @@
 <!-- 로그인 -->
 <div *ngIf="!isAccept" class="app-body" style="background: #2b2c2e">
-  <div class="col-4"style="margin-left: 100px; margin-top: 50px">
+  <div class="col-4 animated fadeIn"style="margin-left: 100px; margin-top: 50px">
     <img src="../../assets/img/neckst-logo.png"/>
   </div>
   <div class="app flex-row align-items-center">
-    <div class="container" style="width: 1000px;">
+    <div class="container animated fadeIn" style="width: 1000px;">
       <div class="row justify-content-center">
         <div class="col-md-8">
           <div class="card-group mb-0">
             <div class="card p-4"  style="background: #2b2c2e; border-color: #2b2c2e">
               <div class="card-block" style="margin-left: 200px; margin-top: 200px">
-                <h1 style="font-weight: bold; color: #e3e3e3; font-size: 56px; margin-left: 16px; margin-bottom: 20px;">LOGIN</h1>
+                <!-- <h1 style="font-weight: bold; color: #e3e3e3; font-size: 56px; margin-left: 16px; margin-bottom: 20px;">LOGIN</h1> -->
 
                 <div class="input-group mb-3" style="background: #2b2c2e; border-color: #2b2c2e">
                   <span class="input-group-addon" style="color: #e3e3e3; font-size: 15px; background: #2b2c2e; border-color: #2b2c2e">ID : </span>
@@ -52,7 +52,7 @@
     <nav class="sidebar-nav" style="color: #868686">
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-speedometer"></i> Dashboard </a>
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-screen-desktop"></i> 모니터링</a>
         </li>
         <li class="divider"></li>
         <li class="nav-title">

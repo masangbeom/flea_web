@@ -5,20 +5,20 @@
 <div class="row animated fadeIn">   
   <div class="col-4" *ngFor="let booth of booths">
     <div class="card" style="background: #2b2c2e; box-shadow: 5px 5px 5px #000; border-color: #2b2c2e;">
-      <div class="card-header" style="font-size: 25px;">
+      <div class="card-header" style="font-size: 25px; background: #2b2c2e; color: #e3e3e3; border: none; font-weight: bold">
         {{booth.mName}} - 이벤트
-        <span class="badge badge-warning">14:00 ~ 18:00</span>
+        <span class="badge badge-warning" style="background: none;">14:00 ~ 18:00</span>
       </div>
       <div class="card-block" style="background: #2b2c2e; color: #e3e3e3; border: none;">
-          <span class="badge badge-info">회사에 관한 여러 지식 Quiz</span>    
+          <h5><span class="badge badge-info">회사에 관한 여러 지식 Quiz</span></h5>
         <br/>
         본 이벤트는 자사의 연혁 및 여러 회사에 관한 지식을 Quiz를 통해 풀며 자사에 관심도를 높이는 이벤트입니다.
         <br/>
-        <span class="badge badge-danger">경품 - 취직</span>
+        <h6><span class="badge badge-danger">경품 - 취직</span></h6>
       </div>
-      <div class="card-footer">
-          <button style="border: none; background: none;" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 수정</button>
-          <button style="border: none; background: none;"><i class="fa fa-trash"></i> 삭제</button>
+      <div class="card-footer" style="background: #2b2c2e; border: none;">
+          <button style="border: none; background: none; color: #e3e3e3;" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 수정</button>
+          <button style="border: none; background: none; color: #e3e3e3;" ><i class="fa fa-trash"></i> 삭제</button>
       </div>
     </div>
   </div>
@@ -26,6 +26,8 @@
 <div class="animated fadeIn">
 <accordion style="margin-top: 20px">
   <accordion-group heading="이벤트 추가">
+      <div class="row">
+          <div class="col-8">
     <div class="card-block">
       <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
         <div class="form-group row" style="margin-left: 170px;">
@@ -74,10 +76,14 @@
       <button (click)="addBooth(mName.value, mDescription.value, mHashtag.value, mImage.value); mName.value=''; mDescription.value=''; mHashtag.value=''; mImage.value='';" type="submit" style="background: #2b2c2e; 
       margin-right: 20px; color: #e3e3e3; widht: 100px; margin-left: 170px"><i class="fa fa-dot-circle-o"></i> 완료</button>
       <button (click)="mName.value=''; mDescription.value=''; mHashtag.value=''; mImage.value='';" type="reset" style="background: #2b2c2e; 
-      color: #e3e3e3; widht: 50px;"><i class="fa fa-ban"></i> 리셋</button>
+      color: #e3e3e3;"><i class="fa fa-ban"></i> 리셋</button>
     </div>
     </div>
-    </div>    
+  </div>
+</div>
+  <div class="col-4">
+        </div>
+      </div>
   </accordion-group>
 </accordion>
 

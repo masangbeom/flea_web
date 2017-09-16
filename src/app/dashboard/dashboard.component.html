@@ -1,12 +1,12 @@
-<div class="row">
+<div class="row animated fadeIn">
   <div class="col-5">
-    <div class="card">
-      <div class="card-header">
+    <div class="card" style="background: #2b2c2e; box-shadow: 5px 5px 5px #000; border-color: #2b2c2e;">
+      <div class="card-header" style="font-size: 25px; background: #2b2c2e; color: #e3e3e3; border: none; font-weight: bold">
         관리 영역 인기도
       </div>
-      <div class="card-block">
-        <div style="display: block;">
-          <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType" (chartHover)="chartHovered($event)"
+      <div class="card-block" style="height: 685px">
+        <div class="chart-wrapper"style="margin-top: 50px">
+          <canvas baseChart [data]="pieChartData" [colors]="pieChartColours" [options]="pieChartOptions" [labels]="pieChartLabels" [chartType]="pieChartType" (chartHover)="chartHovered($event)"
             (chartClick)="chartClicked($event)"></canvas>
         </div>
       </div>
@@ -14,13 +14,70 @@
   </div>
   <div class="col-7">
     
-      <div class="card" *ngFor="let im of booths">
-        <div class="card-header">
-          관리 영역 인기도
+      <div class="card" style="background: #2b2c2e; box-shadow: 5px 5px 5px #000; border-color: #2b2c2e;">
+        <div class="card-header" style="font-size: 25px; background: #2b2c2e; color: #e3e3e3; border: none; font-weight: bold">
+          우아한형제들 - 시간별 방문 시간(초)
         </div>
         <div class="card-block">
+                <div class="chart-wrapper" style="height:130px;">
+                        <canvas baseChart class="chart"
+                        [datasets]="mainChartData"
+                        [labels]="mainChartLabels"
+                        [options]="mainChartOptions"
+                        [colors]="mainChartColours"
+                        [legend]="mainChartLegend"
+                        [chartType]="mainChartType"
+                        (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+              </div>
         </div>
-      
     </div>
+    <div class="card" style="background: #2b2c2e; box-shadow: 5px 5px 5px #000; border-color: #2b2c2e;">
+      <div class="card-header" style="font-size: 25px; background: #2b2c2e; color: #e3e3e3; border: none; font-weight: bold">
+        푸드테크 - 시간별 방문 시간(초)
+      </div>
+      <div class="card-block">
+              <div class="chart-wrapper" style="height:130px;">
+                      <canvas baseChart class="chart"
+                      [datasets]="mainChart2Data"
+                      [labels]="mainChartLabels"
+                      [options]="mainChartOptions"
+                      [colors]="mainChartColours"
+                      [legend]="mainChartLegend"
+                      [chartType]="mainChartType"
+                      (chartHover)="chartHovered($event)"
+                      (chartClick)="chartClicked($event)"></canvas>
+            </div>
+      </div>
+  </div>
+  <div class="card" style="background: #2b2c2e; box-shadow: 5px 5px 5px #000; border-color: #2b2c2e;">
+    <div class="card-header" style="font-size: 25px; background: #2b2c2e; color: #e3e3e3; border: none; font-weight: bold">
+      마켓컬리 - 시간별 방문 시간(초)
+    </div>
+    <div class="card-block">
+            <div class="chart-wrapper" style="height:130px;">
+                    <canvas baseChart class="chart"
+                    [datasets]="mainChart3Data"
+                    [labels]="mainChartLabels"
+                    [options]="mainChartOptions"
+                    [colors]="mainChartColours"
+                    [legend]="mainChartLegend"
+                    [chartType]="mainChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+          </div>
+    </div>
+</div>
+  </div>
+
+  <div class="row animated fadeIn">
+      <div class="card" style="margin-left: 30px; width: 1420px; background: #2b2c2e; box-shadow: 5px 5px 5px #000; border-color: #2b2c2e;">
+          <div class="card-header" style="font-size: 25px; background: #2b2c2e; color: #e3e3e3; border: none; font-weight: bold">
+            관리 영역 별 군집도 시각화
+          </div>
+          <div class="card-block">
+            <app-brush-zoom-2></app-brush-zoom-2>
+          </div>
+      </div>
   </div>
 
