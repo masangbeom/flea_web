@@ -10,7 +10,7 @@
           <div class="card-group mb-0">
             <div class="card p-4"  style="background: #2b2c2e; border-color: #2b2c2e">
               <div class="card-block" style="margin-left: 200px; margin-top: 200px">
-                <h1 style="font-weight: bold; color: #e3e3e3; font-size: 56px; margin-left: 20px; margin-bottom: 20px;">LOGIN</h1>
+                <h1 style="font-weight: bold; color: #e3e3e3; font-size: 56px; margin-left: 16px; margin-bottom: 20px;">LOGIN</h1>
 
                 <div class="input-group mb-3" style="background: #2b2c2e; border-color: #2b2c2e">
                   <span class="input-group-addon" style="color: #e3e3e3; font-size: 15px; background: #2b2c2e; border-color: #2b2c2e">ID : </span>
@@ -39,7 +39,7 @@
 <header class="app-header navbar" *ngIf="isAccept" style="background: #2b2c2e; box-shadow: 5px 5px 5px #000; border-color: #2b2c2e;">
   <ul class="nav navbar-nav mr-auto d-md-down-none">
     <li class="nav-item">
-      <a class="nav-link navbar-toggler" href="#" appSidebarToggler>&#9776;</a>
+      <a class="nav-link navbar-toggler" style="color: #e3e3e3;" href="#" appSidebarToggler>&#9776;</a>
     </li>
     <li>
       <div class="nav-title" href="#"><img style="width: 80px; height: 20px;"src="../../assets/img/neckst-logo.png"/></div>
@@ -48,11 +48,11 @@
 </header>
 
 <div *ngIf="isAccept" class="app-body" style="background: #2b2c2e; box-shadow: 5px 5px 5px #000; border-color: #2b2c2e;">
-  <div class="sidebar">
+  <div class="sidebar" style="background: #1d1d1b; color: #868686">
     <nav class="sidebar-nav">
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-speedometer"></i> Dashboard <span class="badge badge-info">NEW</span></a>
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-speedometer"></i> Dashboard </a>
         </li>
         <li class="divider"></li>
         <li class="nav-title">
@@ -76,7 +76,7 @@
   </main>
 </div>
 
-<footer class="app-footer" *ngIf="isAccept" style="color: #e3e3e3; background: #2b2c2e; box-shadow: 5px 5px 5px #000; border-color: #2b2c2e;">
+<footer class="app-footer" *ngIf="isAccept" style="color: #e3e3e3; background: #2b2c2e; border-color: #1d1d1b">
   NECKST &copy; 2017 creativeLabs.
   <span class="float-right">Powered by <a href="http://sigoss.github.io/">Neckst in OpenHack</a>
     </span>

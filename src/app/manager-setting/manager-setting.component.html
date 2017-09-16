@@ -3,39 +3,37 @@
 <accordion>
   <accordion-group heading="관리 영역 추가">
       <div class="form-group row">
-          <div class="col-md-2">
-              <label class="col-md-10 form-control-label" for="text-input">관리 영역 기간 설정</label>
-            </div>
-          <div class="col-md-6" style="margin-left: 10px">
-            <input placeholder="기간을 설정해주세요." type="text" class="form-control" bsDaterangepicker #dpr="bsDaterangepicker" [bsConfig]="bsConfig" [(bsValue)]="bsRangeValue">
+          <div class="col">
+              <label class="form-control-label" for="text-input">기간 설정</label>
+            <input style="width: 200px;"placeholder="기간을 설정해주세요." type="text" class="form-control" bsDaterangepicker #dpr="bsDaterangepicker" [bsConfig]="bsConfig" [(bsValue)]="bsRangeValue">
           </div>
       </div>
     <div class="card-block">
       <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
         <div class="form-group row">
-          <label class="col-md-2 form-control-label" for="text-input">관리 영역 이름 설정</label>
-          <div class="col-md-10">
+          <label class="col-md-1 form-control-label" for="text-input">이름 설정</label>
+          <div class="col-md-11">
             <input #mName type="text" id="text-input" name="text-input" class="form-control" placeholder="관리 영역 이름">
             <span class="help-block">관리 영역의 이름을 설정하세요 (ex. A 부스, 전시 1동 등)</span>
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-md-2 form-control-label" for="textarea-input">설명</label>
-          <div class="col-md-10">
+          <label class="col-md-1 form-control-label" for="textarea-input">설명</label>
+          <div class="col-md-11">
             <textarea #mDescription id="textarea-input" name="textarea-input" rows="9" class="form-control" placeholder="Content.."></textarea>
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-md-2 form-control-label" for="text-input">해시태그</label>
-          <div class="col-md-10">
+          <label class="col-md-1 form-control-label" for="text-input">해시태그</label>
+          <div class="col-md-11">
             <input #mHashtag type="text" id="text-input" name="text-input" class="form-control" placeholder="해당 영역과 관련되는 태그를 설정해주세요.">
             <span class="help-block">해시태그를 설정해주세요. (ex. #오픈핵#소프트웨어#오픈소스)</span>
           </div>
         </div>
-        <div class="form-group row">
-          <label class="col-md-2 form-control-label" for="select">비콘 설정</label>
-          <div class="col-md-10">
-            <md-select placeholder="Beacon Select" [(ngModel)]="selectedValue" name="beacon">
+        <div class="form-group row" style="margin-bottom: 20px;">
+          <label style="margin-top: 15px"class="col-md-1 form-control-label" for="select">비콘 설정</label>
+          <div class="col-md-11" style="color: #e3e3e3;">
+            <md-select placeholder="Beacon Select" [(ngModel)]="selectedValue" name="beacon" style="color: #e3e3e3;">
               <md-option *ngFor="let beacon of beacons" [value]="beacon.id">
                 {{beacon.id}}
               </md-option>
@@ -43,8 +41,8 @@
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-md-3 form-control-label" for="file-input">File input</label>
-          <div class="col-md-9">
+          <label class="col-md-1 form-control-label" for="file-input">대표사진 설정</label>
+          <div class="col-md-11">
             <input #mImage type="file" id="file-input" name="file-input">
           </div>
         </div>
@@ -54,9 +52,13 @@
       
     </div>
     
-    <div class="card-footer">
-      <button (click)="addBooth(mName.value, mDescription.value, mHashtag.value, mImage.value); mName.value=''; mDescription.value=''; mHashtag.value=''; mImage.value='';" type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
-      <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+    <div class="card-footer" style="background: #2b2c2e; 
+    border: none; 
+    color: #e3e3e3;">
+      <button (click)="addBooth(mName.value, mDescription.value, mHashtag.value, mImage.value); mName.value=''; mDescription.value=''; mHashtag.value=''; mImage.value='';" type="submit" style="background: #2b2c2e; 
+      margin-right: 20px; color: #e3e3e3; widht: 100px;"><i class="fa fa-dot-circle-o"></i> Submit</button>
+      <button type="reset" style="background: #2b2c2e; 
+      color: #e3e3e3; widht: 50px;"><i class="fa fa-ban"></i> Reset</button>
     </div>    
   </accordion-group>
 </accordion>
