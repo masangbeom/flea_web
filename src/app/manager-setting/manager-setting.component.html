@@ -1,16 +1,13 @@
 
 
 <accordion>
-  <accordion-group heading="관리 영역 설정 (확인하려면 클릭)">
-    {{user.id}}의 관리 영역을 추가 및 삭제 할 수 있는 페이지 입니다.
-  </accordion-group>
   <accordion-group heading="관리 영역 추가">
-      <div class="row">
-          <div class="col-md-4">
-              <label class="col-md-3 form-control-label" for="text-input">관리 영역 기간 설정</label>
+      <div class="form-group row">
+          <div class="col-md-3">
+              <label class="col-md-9 form-control-label" for="text-input">관리 영역 기간 설정</label>
             </div>
-          <div class="col-md-8">
-            <input placeholder="기간을 설정해주세요." type="text" class="form-control" bsDaterangepicker #dpr="bsDaterangepicker" [bsConfig]="bsConfig">
+          <div class="col-md-6" style="margin-left: 10px">
+            <input placeholder="기간을 설정해주세요." type="text" class="form-control" bsDaterangepicker #dpr="bsDaterangepicker" [bsConfig]="bsConfig" [(bsValue)]="bsRangeValue">
           </div>
       </div>
     <div class="card-block">
