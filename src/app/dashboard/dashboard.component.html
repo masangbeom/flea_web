@@ -1,3 +1,26 @@
-<div class="animated fadeIn">
-    {{user.id}}
-</div>
+<div class="row">
+  <div class="col-5">
+    <div class="card">
+      <div class="card-header">
+        관리 영역 인기도
+      </div>
+      <div class="card-block">
+        <div style="display: block;">
+          <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType" (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-7">
+    
+      <div class="card" *ngFor="let im of booths">
+        <div class="card-header">
+          관리 영역 인기도
+        </div>
+        <div class="card-block">
+        </div>
+      
+    </div>
+  </div>
+

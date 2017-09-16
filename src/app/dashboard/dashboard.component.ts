@@ -8,12 +8,27 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class DashboardComponent {
   private user: any;
+  private booths: any;
+  // Pie
+  public pieChartLabels:string[];
+  public pieChartData:number[];
+  public pieChartType:string = 'pie';
 
   constructor(public db: AngularFireDatabase, public accountKey: FullLayoutComponent){
     this.db.object('/accounts/'+this.accountKey.accountKey).subscribe((account)=>{
       this.user = account;
     })
-    console.log(this.user);
+    let temp:string[]= [];
+    this.db.list('/accounts/'+this.accountKey.accountKey + '/booths/').subscribe((booths)=>{
+      this.booths = booths;
+      this.booths.forEach(element => {
+        temp.push(element.mName);
+      });
+      console.log(temp);
+    })
+    this.pieChartData = [(Math.round(Math.random() * 100)), (Math.round(Math.random() * 100)), (Math.round(Math.random() * 100))]; 
+    this.pieChartLabels = temp;
+    this.pieChartDataControl();
   // let account1 = {
   //   id: "a-coex",
   //   password: "0000" 
@@ -50,8 +65,12 @@ export class DashboardComponent {
   //     accountKey: success.key
   //   })
   // })
+  }
 
-
-
+  pieChartDataControl(){
+  let pieInterval = setInterval(()=>{
+    this.pieChartData = [(Math.round(Math.random() * 100)), (Math.round(Math.random() * 100)), (Math.round(Math.random() * 100))];  
+  }, 3000)
+  
   }
 }
