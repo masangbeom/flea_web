@@ -19,7 +19,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 
 // RECOMMENDED (doesn't work with system.js)
 import { AccordionModule } from 'ngx-bootstrap';
+import { MdSelectModule } from '@angular/material';
 
+import { ImageUploadModule } from 'angular2-image-upload'
 
 @NgModule({
   imports: [
@@ -33,13 +35,16 @@ import { AccordionModule } from 'ngx-bootstrap';
     AngularFireDatabaseModule,
     TabsModule,
     JsonpModule,
+    MdSelectModule,
+    ImageUploadModule.forRoot(),
+    
   ],
   declarations: [ 
       ManagerSettingComponent,
    ],
 
    providers: [
-     FullLayoutComponent
+     FullLayoutComponent,
    ]
 })
 export class ManagerSettingModule { }

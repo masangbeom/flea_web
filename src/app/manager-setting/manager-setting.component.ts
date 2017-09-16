@@ -33,6 +33,20 @@ export class ProductTreeviewConfig extends TreeviewConfig {
 
 export class ManagerSettingComponent implements OnInit {
   private user: any;
+  
+  selectedValue: string;
+  
+    beacons = [
+      {
+        id: "38547"
+      },
+      {
+        id: "16501"
+      },
+      {
+        id: "978"
+      }
+    ];
 
   constructor(public db: AngularFireDatabase, public accountKey: FullLayoutComponent) {
     this.db.object('/accounts/'+this.accountKey.accountKey).subscribe((account)=>{
@@ -44,5 +58,19 @@ export class ManagerSettingComponent implements OnInit {
     
   }
 
+  addBooth(mName, mDescription, mHashtag, mImage){
+    this.db.list('/accounts/'+this.accountKey.accountKey + '/booths/').push({
+      mName: mName,
+      mDescription: mDescription,
+      mHashtag: mHashtag,
+      mBeacon: this.selectedValue,
+      mImage: mImage
+    }).then((success)=>{
+      this.db.object('/accounts/'+this.accountKey.accountKey + '/booths/' + success.key).update({
+        mKey: success.key       
+      })
+    })
+  
+  }
 }
 
