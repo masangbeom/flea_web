@@ -16,12 +16,13 @@ import { AppRoutingModule } from './app.routing';
 
 // Layouts
 import { FullLayoutComponent } from './layouts/full-layout.component';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 // Firebase Setting
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { ImageUploadModule } from 'angular2-image-upload'
+
 export const firebaseConfig = {
   apiKey: "AIzaSyA6fqH1BS5bJuhxsSTpkqV6mQik8PA21hQ",
   authDomain: "flea-firebase.firebaseapp.com",

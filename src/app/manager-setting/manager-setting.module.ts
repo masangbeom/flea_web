@@ -14,6 +14,9 @@ import { JsonpModule } from '@angular/http';
 // Tabs Component
 import { TabsModule } from 'ngx-bootstrap/tabs';
 
+import { RouterModule } from '@angular/router';
+import { DatepickerModule} from 'ngx-bootstrap/datepicker';
+
 // Modal Component
 import { ModalModule } from 'ngx-bootstrap/modal';
 
@@ -21,7 +24,13 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AccordionModule } from 'ngx-bootstrap';
 import { MdSelectModule } from '@angular/material';
 
-import { ImageUploadModule } from 'angular2-image-upload'
+import { ImageUploadModule } from 'angular2-image-upload';
+
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { defineLocale } from 'ngx-bootstrap/bs-moment';
+import { ko } from 'ngx-bootstrap/locale';
+
+defineLocale('ko', ko);   
 
 @NgModule({
   imports: [
@@ -33,11 +42,12 @@ import { ImageUploadModule } from 'angular2-image-upload'
     ModalModule.forRoot(),
     FormsModule, ReactiveFormsModule,
     AngularFireDatabaseModule,
-    TabsModule,
+    TabsModule.forRoot(),
     JsonpModule,
     MdSelectModule,
     ImageUploadModule.forRoot(),
-    
+    BsDatepickerModule.forRoot(),
+    DatepickerModule.forRoot(),
   ],
   declarations: [ 
       ManagerSettingComponent,
