@@ -11,6 +11,7 @@ export class EventManageComponent {
   private user: any;
   public mytime: Date = new Date();
   private booths: any;
+  private selectValue: string;
 
   constructor(public db: AngularFireDatabase, public accountKey: FullLayoutComponent){
     this.db.object('/accounts/'+this.accountKey.accountKey).subscribe((account)=>{
