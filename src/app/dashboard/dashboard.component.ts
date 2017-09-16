@@ -7,12 +7,13 @@ import { AngularFireDatabase } from 'angularfire2/database';
   templateUrl: 'dashboard.component.html'
 })
 export class DashboardComponent {
+  private user: any;
 
-  constructor(public db: AngularFireDatabase, public accountKey: FullLayoutComponent) {
-    console.log(this.accountKey.accountKey);
-    this.db.object('/accounts/'+this.accountKey.accountKey).subscribe((key)=>{
-      console.log(key);
+  constructor(public db: AngularFireDatabase, public accountKey: FullLayoutComponent){
+    this.db.object('/accounts/'+this.accountKey.accountKey).subscribe((account)=>{
+      this.user = account;
     })
+    console.log(this.user);
   // let account1 = {
   //   id: "a-coex",
   //   password: "0000" 

@@ -9,7 +9,6 @@ import { Component, OnInit, Injectable } from '@angular/core';
 @Injectable()
 export class FullLayoutComponent implements OnInit {
   public accountKey: any;
-  public account: any;
   private isAccept: boolean = false;
   public disabled = false;
   public status: {isopen: boolean} = {isopen: false};
@@ -35,7 +34,7 @@ export class FullLayoutComponent implements OnInit {
       accounts.forEach(account => {
         if(account.id == id && account.password == password){
           this.isAccept = true;
-          this.account = account;
+          this.accountKey = account.accountKey;
           return false;
         }
       });
