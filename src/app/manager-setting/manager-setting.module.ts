@@ -17,11 +17,16 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 // Modal Component
 import { ModalModule } from 'ngx-bootstrap/modal';
 
+// RECOMMENDED (doesn't work with system.js)
+import { AccordionModule } from 'ngx-bootstrap';
+
+
 @NgModule({
   imports: [
     ManagerSettingRoutingModule,
     TreeviewModule.forRoot(),
     BsDropdownModule,
+    AccordionModule.forRoot(),
     CommonModule,
     ModalModule.forRoot(),
     FormsModule, ReactiveFormsModule,

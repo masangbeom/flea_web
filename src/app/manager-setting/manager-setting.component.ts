@@ -8,6 +8,7 @@ import * as moment from 'moment';
 import * as _ from 'lodash';
 import { ModalDirective } from 'ngx-bootstrap/modal/modal.component';
 
+
 @Injectable()
 export class ProductTreeviewConfig extends TreeviewConfig {
   hasAllCheckBox = false;
@@ -32,7 +33,7 @@ export class ProductTreeviewConfig extends TreeviewConfig {
 
 export class ManagerSettingComponent implements OnInit {
   private user: any;
-  
+
   constructor(public db: AngularFireDatabase, public accountKey: FullLayoutComponent) {
     this.db.object('/accounts/'+this.accountKey.accountKey).subscribe((account)=>{
       this.user = account;
