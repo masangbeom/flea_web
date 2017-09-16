@@ -14,6 +14,7 @@ import { defineLocale } from 'ngx-bootstrap/bs-moment';
 
 export class ManagerSettingComponent implements OnInit {
   private user: any;
+  private booths: any;
   selectedValue: string;
   
     beacons = [
@@ -34,6 +35,9 @@ export class ManagerSettingComponent implements OnInit {
   constructor(public db: AngularFireDatabase, public accountKey: FullLayoutComponent) {
     this.db.object('/accounts/'+this.accountKey.accountKey).subscribe((account)=>{
       this.user = account;
+    })
+    this.db.list('/accounts/'+this.accountKey.accountKey+'/booths/').subscribe((booths)=>{
+      this.booths = booths;
     })
     this.bsConfig = Object.assign({}, { locale: this.locale,
                                         containerClass: this.colorTheme,
@@ -67,7 +71,7 @@ export class ManagerSettingComponent implements OnInit {
       mHashtag: mHashtag,
       mBeacon: this.selectedValue,
       mImage: mImage,
-      mDate: date1 + " - " + date2,
+      mDate: date1 + " / " + date2,
     }
     
     this.db.list('/accounts/'+this.accountKey.accountKey + '/booths/').push(booth).then((success)=>{
