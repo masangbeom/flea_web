@@ -1,12 +1,15 @@
 
-<div class="row">
-  <div class="col" *ngFor="let booth of booths">
-    <div class="card">
-      <div class="card-header">
+ <div class="alert" style="background: #2b2c2e; color:#e3e3e3; font-size: 20px;" role="alert">
+    <img src="../../assets/img/shape.png" style="margin-right: 20px">나의 관리 영역
+  </div>
+<div class="row animated fadeIn">   
+  <div class="col-4" *ngFor="let booth of booths">
+    <div class="card" style="background: #2b2c2e; box-shadow: 5px 5px 5px #000; border-color: #2b2c2e;">
+      <div class="card-header" style="font-size: 25px;">
         {{booth.mName}}
         <span class="badge badge-warning">{{booth.mDate}}</span>
       </div>
-      <div class="card-block">
+      <div class="card-block" style="background: #2b2c2e; color: #e3e3e3; border: none;">
           <span class="badge badge-danger">{{booth.mBeacon}}</span>
           <br/>
         {{booth.mDescription}}
@@ -80,9 +83,9 @@
       <div class="col-md-7"></div>
       <div class="col-md-5">
       <button (click)="addBooth(mName.value, mDescription.value, mHashtag.value, mImage.value); mName.value=''; mDescription.value=''; mHashtag.value=''; mImage.value='';" type="submit" style="background: #2b2c2e; 
-      margin-right: 20px; color: #e3e3e3; widht: 100px; margin-left: 170px"><i class="fa fa-dot-circle-o"></i> Submit</button>
-      <button type="reset" style="background: #2b2c2e; 
-      color: #e3e3e3; widht: 50px;"><i class="fa fa-ban"></i> Reset</button>
+      margin-right: 20px; color: #e3e3e3; widht: 100px; margin-left: 170px"><i class="fa fa-dot-circle-o"></i> 완료</button>
+      <button (click)="mName.value=''; mDescription.value=''; mHashtag.value=''; mImage.value='';" type="reset" style="background: #2b2c2e; 
+      color: #e3e3e3; widht: 50px;"><i class="fa fa-ban"></i> 리셋</button>
     </div>
     </div>
     </div>    

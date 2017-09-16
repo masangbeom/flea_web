@@ -25,6 +25,10 @@ export const routes: Routes = [
         path: 'manager-setting',
         loadChildren: './manager-setting/manager-setting.module#ManagerSettingModule'
       },
+      {
+        path: 'event-manage',
+        loadChildren: './event-manage/event-manage.module#EventManageModule'
+      },
     ]
   }
 ];
