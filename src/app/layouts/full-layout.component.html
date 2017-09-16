@@ -10,7 +10,7 @@
           <div class="card-group mb-0">
             <div class="card p-4"  style="background: #2b2c2e; border-color: #2b2c2e">
               <div class="card-block" style="margin-left: 200px; margin-top: 200px">
-                <h1 style="font-weight: bold; color: #e3e3e3; font-size: 56px; margin-bottom: 20px;">LOGIN</h1>
+                <h1 style="font-weight: bold; color: #e3e3e3; font-size: 56px; margin-left: 20px; margin-bottom: 20px;">LOGIN</h1>
 
                 <div class="input-group mb-3" style="background: #2b2c2e; border-color: #2b2c2e">
                   <span class="input-group-addon" style="color: #e3e3e3; font-size: 15px; background: #2b2c2e; border-color: #2b2c2e">ID : </span>
@@ -36,18 +36,18 @@
   </div>
 </div>
 
-<header class="app-header navbar" *ngIf="isAccept">
+<header class="app-header navbar" *ngIf="isAccept" style="background: #2b2c2e; box-shadow: 5px 5px 5px #000; border-color: #2b2c2e;">
   <ul class="nav navbar-nav mr-auto d-md-down-none">
     <li class="nav-item">
       <a class="nav-link navbar-toggler" href="#" appSidebarToggler>&#9776;</a>
     </li>
     <li>
-      <div class="nav-title" style="font-size: 15px; font-weight: bold" href="#">Neckst</div>
+      <div class="nav-title" href="#"><img style="width: 80px; height: 20px;"src="../../assets/img/neckst-logo.png"/></div>
     </li>
   </ul>
 </header>
 
-<div *ngIf="isAccept" class="app-body">
+<div *ngIf="isAccept" class="app-body" style="background: #2b2c2e; box-shadow: 5px 5px 5px #000; border-color: #2b2c2e;">
   <div class="sidebar">
     <nav class="sidebar-nav">
       <ul class="nav">
@@ -66,23 +66,19 @@
   </div>
 
   <!-- Main content -->
-  <main class="main" *ngIf="isAccept">
+  <main class="main" *ngIf="isAccept" style="background: #2b2c2e; border-color: #2b2c2e;">
 
-    <!-- Breadcrumb -->
-    <ol class="breadcrumb">
-      <app-breadcrumbs></app-breadcrumbs>
-    </ol>
 
-    <div class="container-fluid">
+    <div class="container-fluid" style="margin-top: 20px; background: #2b2c2e; border-color: #2b2c2e;">
       <router-outlet></router-outlet>
     </div>
     <!-- /.conainer-fluid -->
   </main>
 </div>
 
-<footer class="app-footer" *ngIf="isAccept">
-  <a href="http://coreui.io">CoreUI</a> &copy; 2017 creativeLabs.
-  <span class="float-right">Powered by <a href="http://coreui.io">CoreUI</a>
+<footer class="app-footer" *ngIf="isAccept" style="color: #e3e3e3; background: #2b2c2e; box-shadow: 5px 5px 5px #000; border-color: #2b2c2e;">
+  NECKST &copy; 2017 creativeLabs.
+  <span class="float-right">Powered by <a href="http://sigoss.github.io/">Neckst in OpenHack</a>
     </span>
 </footer>
 

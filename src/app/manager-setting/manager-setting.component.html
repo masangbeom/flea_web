@@ -3,8 +3,8 @@
 <accordion>
   <accordion-group heading="관리 영역 추가">
       <div class="form-group row">
-          <div class="col-md-3">
-              <label class="col-md-9 form-control-label" for="text-input">관리 영역 기간 설정</label>
+          <div class="col-md-2">
+              <label class="col-md-10 form-control-label" for="text-input">관리 영역 기간 설정</label>
             </div>
           <div class="col-md-6" style="margin-left: 10px">
             <input placeholder="기간을 설정해주세요." type="text" class="form-control" bsDaterangepicker #dpr="bsDaterangepicker" [bsConfig]="bsConfig" [(bsValue)]="bsRangeValue">
@@ -13,28 +13,28 @@
     <div class="card-block">
       <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
         <div class="form-group row">
-          <label class="col-md-3 form-control-label" for="text-input">관리 영역 이름 설정</label>
-          <div class="col-md-9">
+          <label class="col-md-2 form-control-label" for="text-input">관리 영역 이름 설정</label>
+          <div class="col-md-10">
             <input #mName type="text" id="text-input" name="text-input" class="form-control" placeholder="관리 영역 이름">
             <span class="help-block">관리 영역의 이름을 설정하세요 (ex. A 부스, 전시 1동 등)</span>
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-md-3 form-control-label" for="textarea-input">설명</label>
-          <div class="col-md-9">
+          <label class="col-md-2 form-control-label" for="textarea-input">설명</label>
+          <div class="col-md-10">
             <textarea #mDescription id="textarea-input" name="textarea-input" rows="9" class="form-control" placeholder="Content.."></textarea>
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-md-3 form-control-label" for="text-input">해시태그</label>
-          <div class="col-md-9">
+          <label class="col-md-2 form-control-label" for="text-input">해시태그</label>
+          <div class="col-md-10">
             <input #mHashtag type="text" id="text-input" name="text-input" class="form-control" placeholder="해당 영역과 관련되는 태그를 설정해주세요.">
             <span class="help-block">해시태그를 설정해주세요. (ex. #오픈핵#소프트웨어#오픈소스)</span>
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-md-3 form-control-label" for="select">비콘 설정</label>
-          <div class="col-md-9">
+          <label class="col-md-2 form-control-label" for="select">비콘 설정</label>
+          <div class="col-md-10">
             <md-select placeholder="Beacon Select" [(ngModel)]="selectedValue" name="beacon">
               <md-option *ngFor="let beacon of beacons" [value]="beacon.id">
                 {{beacon.id}}
